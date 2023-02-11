@@ -1,0 +1,46 @@
+<?page title="rolModal" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window title="Preuba Crear/Ver/Editar" border="normal"
+		position="center,center" closable="true" mode="modal"
+		action="show: slideDown;hide: slideUp">
+
+		<vlayout>
+		
+			<tablelayout columns="2">
+			
+				<tablechildren>
+					<label value="ID: " style="font-weight:bold" />
+				</tablechildren>
+			
+				<tablechildren>
+					
+					<textbox value="@bind(vm.pruebaSelected.pruebaid)" readonly="true"
+					width="150px" />					
+				
+				</tablechildren>
+				
+				<tablechildren>
+					<label value="Descripcion: " style="font-weight:bold" />
+				</tablechildren>
+			
+				<tablechildren>
+					
+					<textbox value="@bind(vm.pruebaSelected.descripcion)" width="150px" />					
+				
+				</tablechildren>
+			
+			</tablelayout>
+
+			<space height="10px" />
+
+			<hlayout>
+
+				<button label="Aceptar" onClick="@command('guardar')" />
+
+			</hlayout>
+
+		</vlayout>
+
+
+	</window>
+</zk>
