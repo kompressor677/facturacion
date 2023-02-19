@@ -1,0 +1,98 @@
+<?page title="rolModal" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window title="Timbrado Crear/Ver/Editar" border="normal"
+		position="center,center" closable="true" mode="modal"
+		action="show: slideDown;hide: slideUp">
+
+		<vlayout>
+		
+			<tablelayout columns="2">
+			
+				<tablechildren>
+					<label value="ID: " style="font-weight:bold" />
+				</tablechildren>
+			
+				<tablechildren>
+					
+					<textbox value="@bind(vm.timbradoSelected.timbradoid)" readonly="true"
+					width="150px" />					
+				
+				</tablechildren>
+				
+				<tablechildren>
+					<label value="Timbrado: " style="font-weight:bold" />
+				</tablechildren>
+			
+				<tablechildren>
+					
+					<textbox value="@bind(vm.timbradoSelected.timbrado)" width="150px" />					
+				
+				</tablechildren>
+				
+				
+				<tablechildren>
+					<label value="Nro. Actual: " style="font-weight:bold" />
+				</tablechildren>
+				
+				<tablechildren>
+					
+					<textbox value="@bind(vm.timbradoSelected.nactual)" width="150px" />					
+				
+				</tablechildren>
+				
+				<tablechildren>
+					<label value="Vencimiento: " style="font-weight:bold" />
+				</tablechildren>
+				
+				<tablechildren>
+					
+					<textbox value="@bind(vm.timbradoSelected.vencimiento)" width="150px" />					
+				
+				</tablechildren>
+				
+				<tablechildren>
+					<label value="Sucursal: " style="font-weight:bold" />
+				</tablechildren>
+				
+				<tablechildren>
+					
+					<textbox value="@bind(vm.timbradoSelected.sucursal)" width="150px" />					
+				
+				</tablechildren>
+				
+				<tablechildren>
+					<label value="Expedicion: " style="font-weight:bold" />
+				</tablechildren>
+				
+				<tablechildren>
+					
+					<textbox value="@bind(vm.timbradoSelected.expedicion)" width="150px" />					
+				
+				</tablechildren>
+				
+				<tablechildren>
+					<label value="Fecha Ini. Fact.: " style="font-weight:bold" />
+				</tablechildren>
+				
+				<tablechildren>
+					
+					<textbox value="@bind(vm.timbradoSelected.fechaIniFact)" width="150px" />					
+				
+				</tablechildren>
+				
+			
+			</tablelayout>
+
+			<space height="10px" />
+
+			<hlayout>
+
+				<button label="Aceptar" onClick="@command('guardar')" />
+
+			</hlayout>
+
+		</vlayout>
+
+
+	</window>
+</zk>

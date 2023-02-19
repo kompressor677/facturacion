@@ -1,0 +1,98 @@
+<?page title="rolModal" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window title="Producto Crear/Ver/Editar" border="normal"
+		position="center,center" closable="true" mode="modal"
+		action="show: slideDown;hide: slideUp">
+
+		<vlayout>
+		
+			<tablelayout columns="2">
+			
+			
+			
+				<tablechildren>
+					<label value="ID: " style="font-weight:bold" />
+				</tablechildren>
+			
+				<tablechildren>
+					
+					<textbox value="@bind(vm.productoSelected.productoid)" readonly="true"
+					width="150px" />					
+				
+				</tablechildren>
+				
+				
+				
+				
+				
+				<tablechildren>
+					<label value="Producto: " style="font-weight:bold" />
+				</tablechildren>
+				
+				
+				<tablechildren>
+					
+					<textbox value="@bind(vm.productoSelected.producto)" width="150px" />					
+				
+				</tablechildren>
+				
+				
+				
+				
+				
+				<tablechildren>
+					<label value="Codigo de Barras: " style="font-weight:bold" />
+				</tablechildren>
+				
+				
+				<tablechildren>
+					
+					<textbox value="@bind(vm.productoSelected.codigobarra)" width="150px" />					
+				
+				</tablechildren>
+				
+				
+				
+				
+				<tablechildren>
+					<label value="Precio: " style="font-weight:bold" />
+				</tablechildren>
+				
+				
+				<tablechildren>
+					
+					<textbox value="@bind(vm.productoSelected.precio)" width="150px" />					
+				
+				</tablechildren>
+				
+				
+				<tablechildren>
+					<label value="Marca: " style="font-weight:bold" />
+				</tablechildren>
+				
+				
+				<tablechildren>
+					
+					<textbox value="@bind(vm.productoSelected.marcaFK)" width="150px" />					
+				
+				</tablechildren>
+				
+				
+				
+				
+			
+			</tablelayout>
+
+			<space height="10px" />
+
+			<hlayout>
+
+				<button label="Aceptar" onClick="@command('guardar')" />
+
+			</hlayout>
+
+		</vlayout>
+
+
+	</window>
+</zk>
