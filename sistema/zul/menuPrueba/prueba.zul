@@ -46,8 +46,8 @@
 
 						<template name="model">
 
-							<listitem
-								onClick="@command('refrescarOperaciones', prueba = each )">
+							<listitem>
+		
 								<listcell />
 								<listcell label="@load(each[0])" />
 								<listcell label="@load(each[1])" />

@@ -1,1 +1,6 @@
 <mapping class="com.facturacion.modelo.Prueba" />
+<mapping class="com.facturacion.modelo.Cliente" />
+<mapping class="com.facturacion.modelo.Proveedor" />
+<mapping class="com.facturacion.modelo.Timbrado" />
+<mapping class="com.facturacion.modelo.Marca" />
+<mapping class="com.facturacion.modelo.Producto" />
