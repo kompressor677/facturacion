@@ -73,7 +73,54 @@
 				
 				<tablechildren>
 					
-					<textbox value="@bind(vm.productoSelected.marcaFK)" width="150px" />					
+					<bandbox id="bd" value = "@load(vm.buscarMarca)" mold="rounded" autodrop="true"
+							width="250px" onOpen="@command('generarListaBuscarMarca')"
+							readonly="true">
+							<bandpopup>
+
+								<vbox>
+
+									<hbox>
+
+										<label value="Buscar:" />
+
+										<textbox instant="true"
+											value="@bind(vm.buscarMarca)"
+											onChange="@command('filtrarMarcaBuscar')" />
+
+									</hbox>
+
+									<listbox height="250px"
+										width="450px" mold="paging" autopaging="true"
+										onSelect="bd.close()"
+										model="@load(vm.lMarcaBuscar)">
+
+										<listhead>
+											<listheader label="ID" hflex="min" />
+											<listheader label="Marca" />
+										</listhead>
+
+										<template name="model">
+
+											<listitem value="@load(each[1])" onClick="@command('onSelectMarca', id = each[0])">
+
+												<listcell
+													label="@load(each[0])" />
+
+												<listcell 
+													label="@load(each[1])" />
+ 
+
+											</listitem>
+
+										</template>
+										<listitem />
+									</listbox>
+
+								</vbox>
+							</bandpopup>
+						</bandbox>
+										
 				
 				</tablechildren>
 				

@@ -4,3 +4,10 @@
 <mapping class="com.facturacion.modelo.Timbrado" />
 <mapping class="com.facturacion.modelo.Marca" />
 <mapping class="com.facturacion.modelo.Producto" />
+<mapping class="com.facturacion.modelo.Ajuste" />
+<mapping class="com.facturacion.modelo.Deposito" />
+<mapping class="com.facturacion.modelo.Venta" />
+<mapping class="com.facturacion.modelo.Compra" />
+<mapping class="com.facturacion.modelo.ProductoDeposito" />
+<mapping class="com.facturacion.modelo.ProductoDepositoPK" />
+<mapping class="com.facturacion.modelo.VentaDetalle" />

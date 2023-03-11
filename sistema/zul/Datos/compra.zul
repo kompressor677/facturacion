@@ -1,7 +1,7 @@
 <?page title="CLientes" contentType="text/html;charset=UTF-8"?>
 <zk>
-	<window title="Producto" border="normal"
-		viewModel="@id('vm') @init('com.facturacion.Datos.ProductoVM')"
+	<window title="Compra" border="normal"
+		viewModel="@id('vm') @init('com.facturacion.Datos.CompraVM')"
 		vflex="1" id="Body" apply="org.zkoss.bind.BindComposer">
 
 		<hlayout vflex="1">
@@ -12,13 +12,13 @@
 				<hbox pack="end" hflex="1">
 
 					<button label="Agregar" iconSclass=" z-icon-plus"
-						onClick="@command('modalProductosAgregar')"
-						disabled="@load(!vm.opCrearProducto)" />
+						onClick="@command('modalComprasAgregar')"
+						disabled="@load(!vm.opCrearCompra)" />
 
 				</hbox>
 
 				<listbox emptyMessage="lista vacía..." mold="paging"
-					autopaging="true" vflex="1" model="@load(vm.lProductos)"
+					autopaging="true" vflex="1" model="@load(vm.lCompras)"
 					checkmark="true">
 
 					<listhead>
@@ -26,11 +26,10 @@
 						<listheader hflex="min" align="center" />
 						<listheader label="ID" align="right"
 							hflex="min" />
-						<listheader label="Producto" align="left" />
-						<listheader label="Codigo de Barras"
+						<listheader label="Apertura" align="left" />
+						<listheader label="Nro. de Factura"
 							align="left" />
-						<listheader label="Precio" align="left" />
-						<listheader label="Marca" align="left" />
+						<listheader label="Timbrado" align="left" />
 						<listheader align="center" hflex="min" />
 
 
@@ -47,30 +46,21 @@
 
 						<auxheader>
 							<textbox value="@bind(vm.filtroColumns[1])"
-								instant="true" onChange="@command('filtrarProductos')"
-								hflex="1" />
+								instant="true" onChange="@command('filtrarCliente')" hflex="1" />
 						</auxheader>
 
 						<auxheader>
 							<textbox value="@bind(vm.filtroColumns[2])"
-								instant="true" onChange="@command('filtrarProductos')"
-								hflex="1" />
+								instant="true" onChange="@command('filtrarCliente')" hflex="1" />
 						</auxheader>
 
 						<auxheader>
 							<textbox value="@bind(vm.filtroColumns[3])"
-								instant="true" onChange="@command('filtrarProductos')"
-								hflex="1" />
-						</auxheader>
-
-						<auxheader>
-							<textbox value="@bind(vm.filtroColumns[4])"
-								instant="true" onChange="@command('filtrarProductos')"
-								hflex="1" />
+								instant="true" onChange="@command('filtrarCliente')" hflex="1" />
 						</auxheader>
 
 
-						<auxheader />
+
 
 
 					</auxhead>
@@ -86,20 +76,18 @@
 							<listcell label="@load(each[1])" />
 							<listcell label="@load(each[2])" />
 							<listcell label="@load(each[3])" />
-							<listcell label="@load(each[4])" />
-
 
 
 							<listcell>
 								<hlayout>
 
 									<button iconSclass="z-icon-edit"
-										onClick="@command('modalProductos', productoid=each[0])"
-										tooltiptext="Editar" disabled="@load(!vm.opEditarProducto)" />
+										onClick="@command('modalCompras', compraid=each[0])"
+										tooltiptext="Editar" disabled="@load(!vm.opEditarCompra)" />
 									<button iconSclass="z-icon-trash-o"
 										style="background-color:red"
-										onClick="@command('borrarProductoConfirmacion', productoid=each[0])"
-										tooltiptext="Borrar" disabled="@load(!vm.opBorrarProducto)" />
+										onClick="@command('borrarCompraConfirmacion', compraid=each[0])"
+										tooltiptext="Borrar" disabled="@load(!vm.opBorrarCompra)" />
 
 
 								</hlayout>
@@ -117,7 +105,7 @@
 						<listfooter span="4" align="left">
 							<hlayout>
 								<label
-									value="@load(vm.lProductos.size())" />
+									value="@load(vm.lCompras.size())" />
 								<label value="items" />
 							</hlayout>
 						</listfooter>

@@ -11,6 +11,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import com.doxacore.modelo.Modelo;
+import com.doxacore.modelo.Tipo;
 
 @Entity
 @Table(name="productos")
@@ -25,6 +26,10 @@ public class Producto extends Modelo implements Serializable {
 	private String producto;
 	private Long precio;
 	private String codigobarra;
+	
+	@ManyToOne
+	@JoinColumn(name = "unidadmediaid")
+	private Tipo unidadMediaFk;
 	
 	@ManyToOne
 	@JoinColumn(name = "marcaid")
