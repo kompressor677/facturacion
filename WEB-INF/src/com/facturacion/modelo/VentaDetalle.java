@@ -3,6 +3,7 @@ package com.facturacion.modelo;
 import java.io.Serializable;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinColumns;
@@ -21,19 +22,24 @@ public class VentaDetalle extends Modelo implements Serializable{
 	 */
 	private static final long serialVersionUID = 1868887335000313311L;
 
-	private double cantidad;
-	private double precioVenta;
-	
 	@Id
 	@ManyToOne
 	@JoinColumns({@JoinColumn(name="productoid"),
 		          @JoinColumn(name="productodeposito")})
 	private ProductoDeposito productodeposito;
 	
-	//@ManyToOne
-	//@JoinColumn(name="ventaid")
-	//@MapsId("ventaid")
-	//private Venta venta;
+	private double cantidad;
+	private double precioVenta;
+	
+
+	
+	//@JoinColumn(name = "ventaid")
+  //  private Long ventaid;
+	
+	@Id
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name="ventaid")
+	private Venta venta;
 	
 	public double getCantidad() {
 		return cantidad;

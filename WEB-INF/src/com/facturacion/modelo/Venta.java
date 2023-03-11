@@ -34,10 +34,9 @@ public class Venta extends Modelo implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long ventaid;
 	
-	//fetch=FetchType.LAZY,
-	
-	@OneToMany(cascade=CascadeType.ALL, orphanRemoval = true)
-	@JoinColumn(name="ventaid", nullable=false, referencedColumnName="ventaid")
+
+	@OneToMany(fetch = FetchType.LAZY, cascade=CascadeType.ALL, orphanRemoval = true)
+	@JoinColumn(name="ventaid")
 	private List<VentaDetalle> detalles = new ArrayList<VentaDetalle>();
 	
 	
